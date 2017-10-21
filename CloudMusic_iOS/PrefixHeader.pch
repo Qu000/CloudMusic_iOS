@@ -1,0 +1,157 @@
+//
+//  PrefixHeader.pch
+//  CloudMusic_iOS
+//
+//  Created by qujiahong on 2017/9/17.
+//  Copyright © 2017年 瞿嘉洪. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import "Common.h"
+#import "Constant.h"
+#import "Interface.h"
+#import "LQRequestApi.h"
+#import "CWHUDTips.h"
+#import "AdaptScreenHelp.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "MJRefresh.h"
+#import "BestScrollView.h"
+//#import "CityArea.h"
+#import "AlertPopView.h"
+#import "PhotoChoseView.h"
+#import "CJSONDeserializer.h"
+//#import "NSString+MKNetworkKitAdditions.h"
+#import "CommitStarsView.h"
+#import "StarsView.h"
+#import "UIImage+MJ.h"
+
+#import "MusicManager.h"
+
+/**
+ 音乐资源专辑列表请求的url
+ */
+#define kMusicAlbumUrl @"http://app.9nali.com/index/1268?page_id=1&device=iPhone&version=1.1.5"
+
+/**
+ 音乐资源音乐详情请求的url
+ */
+#define kMusicDetailUrl @"http://app.9nali.com/1268/bozhus/3741727?page_id=1&device=iPhone&version=1.1.5"
+
+/**
+ 音乐资源播放列表请求的url正序
+ */
+#define kPlayListUrl @"http://app.9nali.com/1268/albums/214761?page_id=1&isAsc=true&device=iPhone&version=1.1.5"
+
+
+/**
+ 音乐资源播放列表请求的url倒序
+ */
+#define kPlayListUrl2 @"http://app.9nali.com/1268/albums/4965593?page_id=1&isAsc=false&device=iPhone&version=1.1.5"
+/**
+ 音乐资源播放音乐请求的url
+ */
+#define kMusicPlayingUrl @"http://app.9nali.com/1268/tracks/46617281?device=iPhone&version=1.1.5"
+
+/**
+ 音乐资源下载请求的url
+ 1000162
+ 16325000
+ 需要替换
+ */
+#define kMusicDownloadUrl @"http://app.9nali.com/1268/1000162/track/16325000/download?device=iPhone&version=1.1.5"
+
+
+/**
+ 听书城--全部
+ */
+#define kListenAllMusicUrl @"http://app.9nali.com/1268/common_tag/2/all?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--老歌
+ */
+#define kListenOldMusicUrl @"http://app.9nali.com/1268/common_tag/2/all?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--纯音乐
+ */
+#define kListenPureMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E7%BA%AF%E9%9F%B3%E4%B9%90?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--影视
+ */
+#define kListenFilmMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E5%BD%B1%E8%A7%86?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--歌单
+ */
+#define kListenMusicListUrl @"http://app.9nali.com/1268/common_tag/2/%E6%AD%8C%E5%8D%95?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--欧美
+ */
+#define kListenEuropeMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E6%AC%A7%E7%BE%8E?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--翻唱
+ */
+#define kListenOversingingMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E7%BF%BB%E5%94%B1?page_id=1&device=iPhone&version=1.1.5"
+
+/**
+ 听书城--民谣
+ */
+#define kListenOversingingMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E7%BF%BB%E5%94%B1?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--古典
+ */
+#define kListenClassicalMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E5%8F%A4%E5%85%B8?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--古风
+ */
+#define kListenAntiqueMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E5%8F%A4%E9%A3%8E?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--动漫游戏
+ */
+#define kListenGameMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E5%8A%A8%E6%BC%AB%E6%B8%B8%E6%88%8F?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--催眠
+ */
+#define kListenHypnosisMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E5%82%AC%E7%9C%A0?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--日韩
+ */
+#define kListenJapanMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E6%97%A5%E9%9F%A9?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--电子
+ */
+#define kListenElectronMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E7%94%B5%E5%AD%90?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--铃声
+ */
+#define kListenBellMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E9%93%83%E5%A3%B0?page_id=1&device=iPhone&version=1.1.5"
+/**
+ 听书城--音乐小讲堂
+ */
+#define kListenClassroomMusicUrl @"http://app.9nali.com/1268/common_tag/2/%E9%9F%B3%E4%B9%90%E5%B0%8F%E8%AE%B2%E5%A0%82?page_id=1&device=iPhone&version=1.1.5"
+
+
+
+/**
+ RGB颜色
+ */
+#define JHColor(r,g,b,a)[UIColor colorWithRed:r/233.0 green:g/255.0 blue:b/255.0 alpha:a]
+/**
+ cell背景色
+ */
+#define cellColor  JHColor(137, 161, 123, 1)
+
+#define JHMusicFMDB @"JHMusicFMDBQAQ"
+#define JHMusicIndex @"JHMusicIndexQAQ"
+
+#ifdef DEBUG
+#define MyLog(...) NSLog(__VA_ARGS__)
+#else
+#define MyLog(...)
+#endif
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+//#define JHCloudMusicIndex @"JHCloudMusicIndex"
+#endif /* PrefixHeader_pch */
